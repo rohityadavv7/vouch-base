@@ -32,7 +32,7 @@ model Organisation{
   testimonialsCount Int @default(0)
   testimonials Testimonial[]
   organisationToUser String
-  organisationToUserId User @relation(fields: [organisationToUser], references: [id])
+  organisationToUserId User @relation(fields: [organisationToUser], references: [id], onDelete:Cascade)
 
 }
 
@@ -44,7 +44,7 @@ model Testimonial{
   profileImg String?
   isVerified Boolean @default(false)
   testimonialToOrg String
-  testimonialToOrgId Organisation @relation(fields: [testimonialToOrg], references: [id])
+  testimonialToOrgId Organisation @relation(fields: [testimonialToOrg], references: [id], onDelete: Cascade)
   
   
 }

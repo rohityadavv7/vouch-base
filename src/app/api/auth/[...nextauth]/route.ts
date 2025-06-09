@@ -26,7 +26,8 @@ export const authOptions: NextAuthOptions=({
 
         if(!checkClient) {return null}
 
-        const user = {id: checkClient.id, email: checkClient.email, username: checkClient.username}
+        const user = {id: checkClient.id, email: checkClient.email, name: checkClient.username}
+        console.log("User details:", user);
 
         if (user) {
             return user
@@ -40,22 +41,32 @@ export const authOptions: NextAuthOptions=({
     })
     ],
     session: {
-        strategy: "jwt", // <--- This enables JWT session instead of database sessions
+        strategy: "jwt", 
     },
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
     async jwt({ token, user }) {
       if (user) {
+        console.log("User in JWT callback:", user);
         token.id = user.id;
         token.email = user.email;
+        token.name = user.name;
+
+        console.log("Token after setting user details:", token);
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
-        //@ts-ignore
-        session.user.id = token.id;
-        session.user.email = token.email;
+        session.user = {
+            ...session.user,
+            id : token.id as string,
+            email: token.email as string,
+            name: token.name as string
+        }
+
+        console.log("Session after setting user details:", session.user);
+        
       }
       return session;
     },
