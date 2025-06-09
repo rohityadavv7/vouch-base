@@ -15,7 +15,7 @@ export async function POST(req:NextRequest){
         const hashedPassword = await hash(password, 10);
         // console.log("Hashed Password", hashedPassword);
 
-        const newUser = await prisma.user.create({
+        const newClient = await prisma.user.create({
             data:{
                 username: username,
                 email:email,
@@ -26,7 +26,7 @@ export async function POST(req:NextRequest){
         return NextResponse.json({
             message: "User signed up successfully",
             status: 200,
-            newUser
+            newClient
         })
     }catch(error){
         console.log("Error in POST /api/v1/auth/signup", error);

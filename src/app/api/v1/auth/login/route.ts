@@ -12,7 +12,7 @@ export async function POST(req:NextRequest){
 
         const {email,password} = body;
 
-        const loggedinUser = await prisma.user.findFirst({
+        const loggedinClient = await prisma.user.findFirst({
             where: {
                 email: email,
                 password: password
@@ -22,7 +22,7 @@ export async function POST(req:NextRequest){
         return NextResponse.json({
             message:"Logged in successfully",
             status: 200,
-            loggedinUser
+            loggedinClient
         })
 
     }catch(error){
