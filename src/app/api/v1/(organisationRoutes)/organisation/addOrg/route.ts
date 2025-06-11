@@ -8,31 +8,28 @@ const prisma = new PrismaClient();
 export async function POST(req:NextRequest, res:NextResponse) {
     try{
 
+        const session = await getServerSession(authOptions)
+
+        console.log("session in addOrg-> ",session)
+
+        const clientId = session?.user?.id;
+
+        if(!clientId){
+            return NextResponse.json({
+                message:"Unauthorized access",
+                status:401
+            })
+        }
 
         const body = await req.json();
         
-        const {name,description, location, email} = body;
+        const {name,description, location} = body;
 
-        if(!name || !description || !location || !email){
+        if(!name || !description || !location){
             return NextResponse.json({
                 message:"All fields are required",
                 status: 400
             })
-        }
-
-        const checkClient = await prisma.user.findFirst({
-            where:{
-                email:email
-            }
-        })
-
-        console.log("clien details-> ", checkClient);
-
-        if(!checkClient){
-            return NextResponse.json({
-                message: "Client not found!",
-                status: 401
-            });
         }
 
         
@@ -41,7 +38,7 @@ export async function POST(req:NextRequest, res:NextResponse) {
                 name:name,
                 description:description,
                 location:location,
-                organisationToUser:checkClient?.id
+                organisationToUser:clientId
             }
         })
 

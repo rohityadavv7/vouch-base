@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 
 export async function POST(res:NextResponse) {
     try{
+        
         const body = await res.json();
 
         const{author,content,rating,profileImg,orgId}  = body;
