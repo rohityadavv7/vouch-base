@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions=({
             }
         })
 
-        console.log("Check Client:", checkClient);
+        // console.log("Check Client:", checkClient);
 
         if(!checkClient) {return null}
 
