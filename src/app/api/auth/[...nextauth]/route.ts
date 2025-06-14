@@ -26,7 +26,10 @@ export const authOptions: NextAuthOptions=({
 
         if(!checkClient) {return null}
 
-        const user = {id: checkClient.id, email: checkClient.email, name: checkClient.username}
+        const user = {id: checkClient.id, 
+          email: checkClient.email, 
+          name: checkClient.username,
+          roleType: checkClient.role}
         console.log("User details:", user);
 
         if (user) {
@@ -47,25 +50,28 @@ export const authOptions: NextAuthOptions=({
     callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        console.log("User in JWT callback:", user);
+        // console.log("User in JWT callback:", user);
         token.id = user.id;
         token.email = user.email;
         token.name = user.name;
+        token.roleType = user.roleType
 
-        console.log("Token after setting user details:", token);
+        // console.log("Token after setting user details:", token);
       }
       return token;
     },
     async session({ session, token }) {
+      // console.log("token in session-> ", token)
       if (token) {
         session.user = {
             ...session.user,
             id : token.id as string,
             email: token.email as string,
-            name: token.name as string
+            name: token.name as string,
+            roleType: token.roleType as string
         }
 
-        console.log("Session after setting user details:", session.user);
+        // console.log("Session after setting user details:", session.user);
         
       }
       return session;
