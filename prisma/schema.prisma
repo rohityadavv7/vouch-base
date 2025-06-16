@@ -20,6 +20,8 @@ model User{
   email String @unique
   password String
   role Role @default(ORGANIZATION)
+  profileImg String?
+  adminAnnouncements String?
   orgs Organisation[]
   createdAt DateTime @default(now())
 }
@@ -45,7 +47,6 @@ model Testimonial{
   isVerified Boolean @default(false)
   testimonialToOrg String
   testimonialToOrgId Organisation @relation(fields: [testimonialToOrg], references: [id], onDelete: Cascade)
-  
   
 }
 
