@@ -1,12 +1,15 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
+import Hero from "./Components/Hero";
+import Marquee from "./Components/Marquee";
+
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
-  console.log("Session:", session?.user?.roleType);
+
   return (
-    <div>
-      {JSON.stringify(session?.user)}
+    <div className="overflow-x-hidden">
+      <Hero/>
+      <Marquee/>
     </div>
   );
 }

@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
+@layer components{
+    
+}
 
+@theme{
+    --color-pearl: #FFFFFF;
+    --color-orange: #FC5C29
+}
