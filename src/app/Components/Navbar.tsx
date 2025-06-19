@@ -11,12 +11,6 @@ function Navbar() {
 
     <div className='flex w-11/12 justify-between  mx-auto mt-8 relative'>
 
-            {/* <div className={`${menu ? "flex h-screen w-screen absolute bg-red-400":"hidden"}bg-red-400  -ml-15 -mt-8 h-screen w-screen s items-center justify-center`}>
-                <div className={`h-screen 
-                ${menu ? "w-[40%] flex origin-left  z-100 -ml-20 -mt-8":"w-0 hidden"}
-                 bg-black`}></div>
-            </div> */}
-
             <div className={`${menu ? "flex h-screen w-screen bg-black/40 z-1000 absolute -mt-8 -ml-15 ":"hidden"}`}>
                 <div className='h-screen w-[25%] flex flex-col space-y-4 rounded-r-xl text-white bg-black p-6'>
                     <div className='flex  p-4 justify-between rounded-2xl
