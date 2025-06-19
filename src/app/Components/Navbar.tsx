@@ -30,6 +30,11 @@ function Navbar() {
 
                     {/* MENUBAR-OPTION */}
                     <div className='p-4 flex flex-col text-lg tracking-wide space-y-5'>
+                        
+                        <div className='rounded-2xl'>
+                            Home
+                        </div>
+                        
                         <div className='rounded-2xl'>
                             Testimonials
                         </div>
