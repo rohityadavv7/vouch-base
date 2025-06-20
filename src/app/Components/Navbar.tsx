@@ -11,11 +11,11 @@ function Navbar() {
 
     <div className='flex w-11/12 justify-between  mx-auto mt-8 relative'>
 
-            <div className={`${menu ? "flex h-screen w-screen bg-black/40 z-1000 absolute -mt-8 -ml-15 ":"hidden"}`}>
-                <div className='h-screen w-[25%] flex flex-col space-y-4 rounded-r-xl text-white bg-black p-6'>
-                    <div className='flex  p-4 justify-between rounded-2xl
+            <div className={`${menu ? "flex h-screen w-[110vw] bg-black/40 z-1000 absolute -mt-8 sm:-mt-8 md:-mt-8 xl:-mt-8 -ml-7 sm:-ml-13 md:-ml-14 xl:-ml-15":"hidden"}`}>
+                <div className='h-screen w-[40%] sm:w-[30%] md:w-[26%]  lg:w-[25%] flex flex-col space-y-4 rounded-r-xl sm:ml-5 md:ml-3 lg:ml-0 text-white bg-black p-6'>
+                    <div className='flex p-3 items-center sm:p-2 md:p-3 lg:p-4 justify-between rounded-xl sm:rounded-xl md:rounded-2xl
                       bg-zinc-800'>
-                        <div className='text-xl'>
+                        <div className='text-xs sm:text-sm md:text-lg lg:text-xl'>
                             <div>VouchBase.</div>
                         </div>
                         <div onClick={() => setMenu(false)}
@@ -24,12 +24,12 @@ function Navbar() {
                         </div>
                     </div>
 
-                    <div className='bg-zinc-800 p-4 rounded-2xl'>
+                    <div className='bg-zinc-800 text-xs p-3 rounded-xl sm:p-2 md:p-3 lg:p-4 sm:text-sm md:text-lg lg:text-xl sm:rounded-xl md:rounded-2xl'>
                         Profile
                     </div>
 
                     {/* MENUBAR-OPTION */}
-                    <div className='p-4 flex flex-col text-lg tracking-wide space-y-5'>
+                    <div className='p-4 flex flex-col text-sm sm:text-md md:text-lg tracking-wide space-y-5'>
                         
                         <div className='rounded-2xl'>
                             Home
@@ -64,7 +64,7 @@ function Navbar() {
                 className='outline-1 rounded-full px-3 py-1 cursor-pointer'><Menu/></div>
             </div>
 
-            <div className=' text-2xl'>
+            <div className='hidden sm:flex text-2xl'>
                 VouchBase
             </div>
             
