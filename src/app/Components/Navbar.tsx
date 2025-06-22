@@ -2,9 +2,19 @@
 import React, { useState } from 'react'
 import Menu from '../Icons/Menu'
 import MenuClose from '../Icons/MenuClose'
+import { useRouter } from 'next/navigation'
+import { getServerSession } from 'next-auth'
 
-function Navbar() {
+interface navProps{
+    role:string
+}
 
+function Navbar(props:navProps) {
+
+    const basePath = props.role === "ADMIN"?"admin":"client"
+    
+ 
+    const router = useRouter()
     const[menu, setMenu] = useState(false)
     const [selected, setSelected] = useState(false)
   return (
@@ -13,10 +23,10 @@ function Navbar() {
 
             <div className={`${menu ? "flex h-screen w-[110vw] bg-black/40 z-1000 absolute -mt-8 sm:-mt-8 md:-mt-8 xl:-mt-8 -ml-7 sm:-ml-13 md:-ml-14 xl:-ml-15":"hidden"}`}>
                 <div className='h-screen w-[40%] sm:w-[30%] md:w-[26%]  lg:w-[25%] flex flex-col space-y-4 rounded-r-xl sm:ml-5 md:ml-3 lg:ml-0 text-white bg-black p-6'>
-                    <div className='flex p-3 items-center sm:p-2 md:p-3 lg:p-4 justify-between rounded-xl sm:rounded-xl md:rounded-2xl
+                    <div className='flex cursor-pointer p-3 items-center sm:p-2 md:p-3 lg:p-4 justify-between rounded-xl sm:rounded-xl md:rounded-2xl
                       bg-zinc-800'>
                         <div className='text-xs sm:text-sm md:text-lg lg:text-xl'>
-                            <div>VouchBase.</div>
+                            <div onClick={() => router.push("/")}>VouchBase.</div>
                         </div>
                         <div onClick={() => setMenu(false)}
                         className={`cursor-pointer`}>
@@ -29,10 +39,11 @@ function Navbar() {
                     </div>
 
                     {/* MENUBAR-OPTION */}
-                    <div className='p-4 flex flex-col text-sm sm:text-md md:text-lg tracking-wide space-y-5'>
+                    <div className='p-4 flex cursor-pointer flex-col text-sm sm:text-md md:text-lg tracking-wide space-y-5'>
                         
-                        <div className='rounded-2xl'>
-                            Home
+                        <div onClick={() => router.push(`/${basePath}/dashboard`)}
+                        className='rounded-2xl'>
+                            Dashboard
                         </div>
                         
                         <div className='rounded-2xl'>
