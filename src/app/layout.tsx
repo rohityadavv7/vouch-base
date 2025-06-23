@@ -35,7 +35,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
       >
-        <Navbar role={role}/>
+        <Navbar role={role as string}/>
         {children}
       </body>
     </html>
