@@ -8,25 +8,39 @@ interface propsData{
 }
 
 function TestimonialBanner(props:propsData) {
+
+
   return (
-    <div className='w-full flex outline-1 outline-zinc-500/40 p-2 rounded-2xl'>
-        <div>
-            <img src={avatar as unknown as string}/>
+    <div className='w-full md:px-4 lg:px-8 flex items-center justify-between bg-black text-white p-2 rounded-3xl'>
+        <div className='flex gap-3 items-center'>
+            <img src={avatar.src}/>
+            <div className='text-xs'>
+                {
+                    props.name?
+                    (<span>
+                        {props.name}
+                    </span>)
+                    :
+                    (<span>
+                        Hannah Morgan
+                    </span>)
+                }
+            </div>
         </div>
 
-        <div>
+        <div className='text-xs'>
             {
                 props.content?
                 (<div>{props.content}</div>)
                 :
-                (<div>Testing</div>)
+                (<div>This testimonial content is for testing only.</div>)
             }
         </div>
 
-        <div>
+        <div className='text-xs'>
             {
                props.rating?
-                (<div>{props.content}</div>)
+                (<div>{props.rating}</div>)
                 :
                 (<div>5</div>) 
             }

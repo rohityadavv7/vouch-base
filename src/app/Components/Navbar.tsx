@@ -50,19 +50,24 @@ function Navbar(props:navProps) {
                             Testimonials
                         </div>
 
-                        <div>
-                            Organisations
+                        <div onClick={() => router.push(`/${props.role === "ADMIN"?  `${basePath}/clients`:`${basePath}/organisations`}`)}>
+                            {
+                                props.role === "ADMIN"?
+                                ("Clients")
+                                :
+                                ("Organisations")
+                            }
                         </div>
 
-                        <div>
+                        <div onClick={() => router.push(`/${basePath}/components`)}>
                             Components
                         </div>
 
-                        <div>
+                        <div onClick={() => router.push(`/${basePath}/subscriptions`)}>
                             Subscription
                         </div>
 
-                        <div>
+                        <div onClick={() => router.push(`/${basePath}/settings`)}>
                             Settings
                         </div>
                     </div>

@@ -2,9 +2,9 @@ import React from 'react'
 import Check from '../Icons/Check'
 
 interface billProps{
-    plan:string,
-    subscription:string,
-    planBenefits:string[],
+    plan?:string,
+    subscription?:string,
+    planBenefits?:string[],
 }
 
 function BillCards(props:billProps) {
