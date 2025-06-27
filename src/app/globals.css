@@ -1,12 +1,59 @@
 @import "tailwindcss";
 
-@layer components{
-    
+@keyframes blob-motion1 {
+  0% {
+    transform: translate(0%, 0%) scale(1);
+  }
+  50%{
+    transform: translateX(60%) translateY(50%) scale(2);
+  }
+  100% {
+    transform: translate(0%, 0%) scale(1);
+  }
+}
+
+@keyframes blob-motion2 {
+  0% {
+    transform: translate(0%, 0%) scale(1);
+  }
+  40%{
+    transform: translateX(-60%) translateY(-50%) scale(0.5);
+  }
+  70%{
+    transform: translateX(50%) translateY(-10%) scale(2);
+  }
+  100% {
+    transform: translate(0%, 0%) scale(1);
+  }
+}
+
+@keyframes blob-motion3 {
+  0% {
+    transform: translate(0%, 0%) scale(1);
+  }
+  50%{
+    transform: translateX(-20%) translateY(20%) scale(2.5);
+  }
+  100% {
+    transform: translate(0%, 0%) scale(1);
+  }
+}
+
+@layer utilities{
+    .blob-motion1{
+        animation: blob-motion1 7s ease-in-out infinite;
+    }
+    .blob-motion2{
+        animation: blob-motion2 5s ease-in-out infinite;
+    }
+    .blob-motion3{
+        animation: blob-motion3 4s ease-in-out infinite;
+    }
 }
 
 @theme{
     --color-pearl: #FFFFFF;
     --color-orange: #FC5C29;
     --color-iceBlue: #D0E0E9;
-    --color-newBlue: #DEECF0
+    --color-newBlue: #ECF2F8
 }

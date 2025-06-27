@@ -16,7 +16,7 @@ function BillCards(props:billProps) {
         <div className='text-2xl md:text-4xl lg:text-5xl py-2 lg:py-6 border-amber-50/20 font-semibold border-b-1 tracking-wider'>{props.subscription}</div>
 
         <div className='flex flex-col py-2 space-y-3 md:py-6 md:space-y-8 text-xs'>
-            {props.planBenefits.map((benefit,idx) => (
+            {props.planBenefits?.map((benefit,idx) => (
                 <div key={idx} className='flex items-center gap-3'>
                     <div><Check/></div>
                     <div className='text-zinc-400'>{benefit}</div>

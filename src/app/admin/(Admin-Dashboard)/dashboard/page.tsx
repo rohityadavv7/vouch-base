@@ -20,9 +20,15 @@ async function page() {
     const org:string = ""; 
     
   return (
-    <div className='  w-11/12 h-fit lg:h-fit  mx-auto flex gap-4 md:gap-2 mt-3 py-2  bg-pearl text-black'>
+    <div className='  w-11/12 h-fit lg:h-fit -z-30 over-h  mx-auto flex gap-4 md:gap-2 mt-3 py-2  bg-pearl relative text-black'>
 
-        <div className='flex flex-col gap-4 bg-newBlue rounded-2xl p-2 md:p-4'>
+        <div className='h-100 w-100 bg-blue-500 blur-3xl blob-motion1 rounded-full top-20 absolute -z-20'></div>
+
+        <div className='h-100 w-100 bg-pink-300 blur-3xl  blob-motion2 top-[30%] left-1/2  rounded-full absolute -z-20'></div>
+
+        <div className='h-50 w-50 blur-3xl bg-[#1d76ea] blob-motion3 -z-10 bottom-0  absolute right-0 bg-'></div>
+
+        <div className='flex flex-col gap-4 bg-pearl/40 outline-1 outline-neutral-200 rounded-2xl p-2 md:p-4'>
             {/* GREETING */}
             <div className='flex justify-between px-4 mt-4'>
                 <div className='text-2xl'>
@@ -39,12 +45,12 @@ async function page() {
             <div className='flex gap-4 md:gap-2'>
                 <div className='lg:w-[75%] sm:w-[60%] md:w-[65%] w-[50%]'>
                     {/* DASHBAORD CONTET */}
-                    <div className='bg-newBlue rounded-2xl p-2 sm:p-1 lg:p-2'>
+                    <div className='bg- rounded-2xl p-2 sm:p-1 lg:p-2'>
 
                         {/* ANALYTICS-METRICS */}
                         <div>
                             <div className='grid lg:grid-cols-4 md:grid-cols-2 w-full gap-6 lg:gap-4 mt-5'>
-                                <div className='bg-iceBlue flex flex-col  gap-4 rounded-xl p-6 lg:p-4 lg:gap-2'>
+                                <div className='bg-pearl  outline-1 outline-neutral-200 flex flex-col  gap-4 rounded-xl p-6 lg:p-4 lg:gap-2'>
                                     <div>
                                         <Ogranisation/>
                                     </div>
@@ -60,7 +66,7 @@ async function page() {
                                     </div>
                                 </div>
 
-                                <div className='bg-iceBlue flex flex-col rounded-xl p-6 lg:p-4 lg:gap-2 gap-4'>
+                                <div className='bg-pearl outline-1 outline-neutral-200 flex flex-col rounded-xl p-6 lg:p-4 lg:gap-2 gap-4'>
                                     <div>
                                         <Data/>
                                     </div>
@@ -75,7 +81,7 @@ async function page() {
                                     </div>
                                 </div>
 
-                                <div className='bg-iceBlue flex flex-col rounded-xl p-6 lg:p-4 gap-4 lg:gap-2'>
+                                <div className='bg-pearl outline-1 outline-neutral-200 flex flex-col rounded-xl p-6 lg:p-4 gap-4 lg:gap-2'>
                                     <div>
                                         <VouchScore/>
                                     </div>
@@ -95,7 +101,7 @@ async function page() {
                                     </div>
                                 </div>
 
-                                <div className='bg-iceBlue flex flex-col rounded-xl p-6 lg:p-4 gap-4 lg:gap-2'>
+                                <div className='bg-pearl outline-1 outline-neutral-200 flex flex-col rounded-xl p-6 lg:p-4 gap-4 lg:gap-2'>
                                     <div>
                                         <Component/>
                                     </div>
@@ -117,7 +123,7 @@ async function page() {
                         <div className='w-ful mt-10'>
                             {
                                 recentTestimonials?
-                                (<div className='bg-iceBlue p-4 rounded-2xl '>
+                                (<div className='bg-pearl outline-1 outline-neutral-200 p-4 rounded-2xl '>
                                     <div className='md:text-xl sm:text-md lg:text-2xl'>
                                         Recent Testimonials.
                                     </div>

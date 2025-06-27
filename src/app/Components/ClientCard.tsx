@@ -11,7 +11,7 @@ interface clientProps{
 
 function ClientCard(props:clientProps) {
   return (
-    <div className='outline-1 p-2 rounded-xl hover:scale-101 transition-all duration-300 hover:shadow-xl outline-neutral-200'>
+    <div className='outline-1 p-2 bg-pearl rounded-xl hover:scale-101 transition-all duration-300 hover:shadow-xl outline-neutral-200'>
         <div className='border-b-[0.5px] border-neutral-200 p-4'>
             <div className='flex gap-2 items-center'>
                 <div>

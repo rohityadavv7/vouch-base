@@ -8,7 +8,7 @@ function page() {
     const subsriptionsCount:number = null;
     const revenue: number = null;
   return (
-    <div className='text-black bg-pearl outline-1 outline-neutral-200 w-11/12 mx-auto mt-5 rounded-xl p-4'>
+    <div className='text-black bg- outline-1 outline-neutral-200 w-11/12 mx-auto mt-5 rounded-xl p-4'>
         
         {/* QUICK-TOGGLES */}
         <div className='border-b-[0.5px] flex flex-col space-y-3 pb-6 border-neutral-200'>
@@ -16,6 +16,10 @@ function page() {
             <div className='justify-between flex '>
                 <div className='text-xl font-semibold'>
                      Client Details
+
+                     <div className='text-sm mt-1 font-normal text-neutral-500'>
+                        All your clients data is visible here,
+                     </div>
                 </div>
 
                 <div>
@@ -27,7 +31,7 @@ function page() {
             </div>
 
             <div className='grid grid-cols-3 gap-4'>
-                <div className='outline-1  outline-zinc-300 rounded-lg p-2 md:p-8'>
+                <div className='outline-1 bg- outline-zinc-300 rounded-lg p-2 md:p-8'>
 
                     <div className='flex flex-col space-y-8'>
                         <div className=' text-sm md:text-2xl text-black'>Total clients:</div>
@@ -43,7 +47,7 @@ function page() {
 
                 </div>
 
-                <div className='outline-1 outline-zinc-300 rounded-lg p-2 md:p-8'>
+                <div className='outline-1 bg- outline-zinc-300 rounded-lg p-2 md:p-8'>
 
                     <div className='flex flex-col space-y-8'>
                         <div className='text-sm md:text-2xl text-black'>Active Subscriptions:</div>
